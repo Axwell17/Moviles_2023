@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">labo04hs</string>
+    <string name="Title">Rellena la siguiente \ninformacion</string>
+    <string name="labelName">Nombre</string>
+    <string name="labelMail">Correo electronico</string>
+    <string name="labelNumber">Numero de telefono</string>
+    <string name="title2">Confirma tu informacion</string>
+    <string name="nombreSecondActivity">Nombre</string>
+    <string name="correo_electronicoSecondActivity">Correo electronico</string>
+    <string name="numero_de_telefonoSecondActivity">Numero de telefono</string>
+    <string name="BtnCompartir">Compartir</string>
+</resources>

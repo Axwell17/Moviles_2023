@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundLayout"
+    tools:context=".fragment_third">
+
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="New Movie"
+        android:textColor="@color/white"
+        android:textSize="45sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="45dp"
+        android:background="@color/cardLayout"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/textView9"
+        app:layout_constraintStart_toStartOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <EditText
+        android:id="@+id/editTextTextCategory"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="45dp"
+        android:background="@color/cardLayout"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Category"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+    <EditText
+        android:id="@+id/editTextTextDescription"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="45dp"
+        android:background="@color/cardLayout"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Description"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextCategory"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextCategory"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextCategory" />
+
+    <EditText
+        android:id="@+id/editTextTextCalification"
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="45dp"
+        android:background="@color/cardLayout"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Calification"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextDescription"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextDescription"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextDescription" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/buttonColor"
+        android:text="Submit"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextCalification"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextCalification"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextCalification" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">labo05hs</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_fragment1">BillBoard</string>
+    <string name="title_movie">Star Wars Episodio 3:</string>
+    <string name="description_movie">La venganza de los sith</string>
+    <string name="calification">9.8</string>
+    <string name="title_fragment2">Star Wars episodio 3: La venganza de los Sith</string>
+    <string name="type_movie">Ciencia Ficcion</string>
+    <string name="calification_2">9.8</string>
+    <string name="desc_movie">¡Guerra! La República se desmorona bajo los ataques del despiadado Lord Sith, el conde Dooku. Hay héroes en ambos bandos, pero el mal está por doquier. En una contundente jugada, el diabólico líder droide, el general Grievous, ha irrumpido en la capital de la República y ha secuestrado al Canciller Palpatine, líder del senado Galáctico. Mientras el ejército droide separatista trata de huir con su valioso rehén, dos caballeros Jedi inician una misión desesperada para liberar al Canciller cautivo.</string>
+</resources>

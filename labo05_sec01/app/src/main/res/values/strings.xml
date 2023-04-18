@@ -10,4 +10,10 @@
     <string name="type_movie">Ciencia Ficcion</string>
     <string name="calification_2">9.8</string>
     <string name="desc_movie">¡Guerra! La República se desmorona bajo los ataques del despiadado Lord Sith, el conde Dooku. Hay héroes en ambos bandos, pero el mal está por doquier. En una contundente jugada, el diabólico líder droide, el general Grievous, ha irrumpido en la capital de la República y ha secuestrado al Canciller Palpatine, líder del senado Galáctico. Mientras el ejército droide separatista trata de huir con su valioso rehén, dos caballeros Jedi inician una misión desesperada para liberar al Canciller cautivo.</string>
+    <string name="title_fragment3">New Movie</string>
+    <string name="editTextName">Name</string>
+    <string name="editTextCategory">Category</string>
+    <string name="editTextDescription">Description</string>
+    <string name="editTextCalification">Calification</string>
+    <string name="btnSubmit">Submit</string>
 </resources>

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fragment_first"
-        android:name="com.example.labo05hs.FragmentFirst"
+        android:name="com.example.labo05hs.ui.movie.FragmentFirst"
         android:label="fragment_first"
         tools:layout="@layout/fragment_first" >
         <action
@@ -19,12 +19,12 @@
     </fragment>
     <fragment
         android:id="@+id/fragment_second"
-        android:name="com.example.labo05hs.FragmentSecond"
+        android:name="com.example.labo05hs.ui.movie.FragmentSecond"
         android:label="fragment_second"
         tools:layout="@layout/fragment_second" />
     <fragment
         android:id="@+id/fragment_third"
-        android:name="com.example.labo05hs.FragmentThird"
+        android:name="com.example.labo05hs.ui.movie.FragmentThird"
         android:label="fragment_third"
         tools:layout="@layout/fragment_third" >
         <action

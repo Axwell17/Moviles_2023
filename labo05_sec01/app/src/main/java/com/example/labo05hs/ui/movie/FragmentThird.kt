@@ -1,8 +1,7 @@
 package com.example.labo05hs.ui.movie
 
-import android.media.audiofx.AudioEffect.Descriptor
+import android.graphics.Movie
 import android.os.Bundle
-import android.util.EventLogTags.Description
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -12,10 +11,10 @@ import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.labo05hs.R
 import com.example.labo05hs.data.model.MovieModel
-import java.util.Locale.Category
-import java.util.jar.Attributes.Name
+import com.example.labo05hs.databinding.FragmentThirdBinding
 
 class FragmentThird : Fragment() {
 
@@ -23,39 +22,60 @@ class FragmentThird : Fragment() {
         MovieViewModel.Factory
     }
 
-    private lateinit var editTextTextPersonName: EditText
-    private lateinit var editTextTextCategory: EditText
-    private lateinit var editTextTextDescription: EditText
-    private lateinit var editTextTextCalification: EditText
+    private lateinit var editTextMovieName: EditText
+    private lateinit var editTextCategory: EditText
+    private lateinit var editTextDescription: EditText
+    private lateinit var editTextQualification: EditText
     private lateinit var Button: Button
 
-
+    private lateinit var binding: FragmentThirdBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_third,container, false)
+        binding = FragmentThirdBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?){
         super.onViewCreated(view, savedInstanceState)
         bindButton()
         bindEditText()
+        setViewModel()
+        observeStatus()
+        var name = editTextMovieName.text.toString()
+        var category = editTextCategory.text.toString()
+        var description = editTextDescription.text.toString()
+        var qualification = editTextQualification.text.toString()
 
-        var name = editTextTextPersonName.text.toString()
-        var category = editTextTextCategory.text.toString()
-        var description = editTextTextDescription.text.toString()
-        var calification = editTextTextCalification.text.toString()
-
-        Button.setOnClickListener{
-            movieViewModel.addMovies(MovieModel(name,category,description,calification))
-            Log.d("Lista", movieViewModel.getMovies().toString())
-        }
-
-
+        //Button.setOnClickListener{
+        //    movieViewModel.addMovies(MovieModel(name,category,description,qualification))
+        //    Log.d("Lista", movieViewModel.getMovies().toString())
+        //}
 
     }
 
+    private fun setViewModel(){
+        binding.viewmodel = movieViewModel
+    }
+
+    private fun observeStatus(){
+        movieViewModel.status.observe(viewLifecycleOwner) {status ->
+            when{
+                status.equals(MovieViewModel.WRONG_INFORMATION) -> {
+                    Log.d("APP_TAG", status)
+                    movieViewModel.clearStatus()
+                }
+                status.equals(MovieViewModel.MOVIE_CREATED) -> {
+                    Log.d("APP_TAG", status)
+                    Log.d("APP_TAG", movieViewModel.getMovies().toString())
+
+                    movieViewModel.clearStatus()
+                    findNavController().popBackStack()
+                }
+            }
+        }
+    }
 
     private fun bindButton(){
         Button = view?.findViewById(R.id.button) as Button
@@ -65,9 +85,9 @@ class FragmentThird : Fragment() {
     }
 
     private fun bindEditText(){
-        editTextTextPersonName = view?.findViewById(R.id.editTextTextPersonName) as EditText
-        editTextTextCategory = view?.findViewById(R.id.editTextTextCategory) as EditText
-        editTextTextDescription = view?.findViewById(R.id.editTextTextDescription) as EditText
-        editTextTextCalification = view?.findViewById(R.id.editTextTextCalification) as EditText
+        editTextMovieName = view?.findViewById(R.id.editTextMovieName) as EditText
+        editTextCategory = view?.findViewById(R.id.editTextCategory) as EditText
+        editTextDescription = view?.findViewById(R.id.editTextDescription) as EditText
+        editTextQualification = view?.findViewById(R.id.editTextQualification) as EditText
     }
 }

@@ -9,12 +9,16 @@ import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.labo05hs.R
+import com.example.labo05hs.databinding.FragmentThirdBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class FragmentFirst : Fragment() {
     private lateinit var floatingActionButton: FloatingActionButton
     private lateinit var CardView: CardView
     private lateinit var Button: Button
+
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedState: Bundle?

@@ -6,15 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.labo05hs.R
+import com.example.labo05hs.databinding.FragmentThirdBinding
 
 class FragmentSecond : Fragment() {
 
+    private lateinit var binding: FragmentThirdBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_second, container, false)
+        savedState: Bundle?
+    ): View {
+        binding = FragmentThirdBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

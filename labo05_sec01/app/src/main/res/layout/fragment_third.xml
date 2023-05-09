@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/backgroundLayout"
-        tools:context=".ui.movie.FragmentThird">
+        tools:context=".ui.movie.newmovie.FragmentThird">
 
 
         <TextView

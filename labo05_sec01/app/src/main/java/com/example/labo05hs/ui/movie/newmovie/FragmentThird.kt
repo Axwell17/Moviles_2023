@@ -1,6 +1,5 @@
-package com.example.labo05hs.ui.movie
+package com.example.labo05hs.ui.movie.newmovie
 
-import android.graphics.Movie
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,8 +12,8 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.labo05hs.R
-import com.example.labo05hs.data.model.MovieModel
 import com.example.labo05hs.databinding.FragmentThirdBinding
+import com.example.labo05hs.ui.movie.MovieViewModel
 
 class FragmentThird : Fragment() {
 

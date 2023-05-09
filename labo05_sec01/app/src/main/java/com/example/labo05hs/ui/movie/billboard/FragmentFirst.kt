@@ -1,4 +1,4 @@
-package com.example.labo05hs.ui.movie
+package com.example.labo05hs.ui.movie.billboard
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -1,6 +1,5 @@
-package com.example.labo05hs.ui.movie
+package com.example.labo05hs.ui.movie.viewmodel
 
-import android.text.Spannable.Factory
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
@@ -10,7 +9,7 @@ import com.example.labo05hs.MovieReviewerApplication
 import com.example.labo05hs.data.model.MovieModel
 import com.example.labo05hs.repositories.MovieRepository
 
-class MovieViewModel (private val repository: MovieRepository) : ViewModel() {
+class MovieViewModel(private val repository: MovieRepository) : ViewModel() {
     var name = MutableLiveData("")
     var category = MutableLiveData("")
     var description = MutableLiveData("")
@@ -21,8 +20,8 @@ class MovieViewModel (private val repository: MovieRepository) : ViewModel() {
 
     fun addMovies(movie: MovieModel) = repository.addMovies(movie)
 
-    fun createMovie(){
-        if (!validateData()){
+    fun createMovie() {
+        if (!validateData()) {
             status.value = WRONG_INFORMATION
             return
         }
@@ -40,8 +39,8 @@ class MovieViewModel (private val repository: MovieRepository) : ViewModel() {
         status.value = MOVIE_CREATED
     }
 
-    private fun validateData(): Boolean{
-        when{
+    private fun validateData(): Boolean {
+        when {
             name.value.isNullOrEmpty() -> return false
             category.value.isNullOrEmpty() -> return false
             description.value.isNullOrEmpty() -> return false
@@ -50,17 +49,23 @@ class MovieViewModel (private val repository: MovieRepository) : ViewModel() {
         return true
     }
 
-    private fun clearData(){
+    fun clearData() {
         name.value = ""
         category.value = ""
         description.value = ""
         qualification.value = ""
     }
 
-    fun clearStatus(){
-         status.value = INACTIVE
+    fun clearStatus() {
+        status.value = INACTIVE
     }
 
+    fun setSelectedMovie(movie: MovieModel) {
+        name.value = movie.name
+        category.value = movie.category
+        description.value = movie.description
+        qualification.value = movie.qualification
+    }
 
     companion object {
         val Factory = viewModelFactory {
@@ -74,5 +79,4 @@ class MovieViewModel (private val repository: MovieRepository) : ViewModel() {
         const val WRONG_INFORMATION = "Wrong information"
         const val INACTIVE = ""
     }
-
 }

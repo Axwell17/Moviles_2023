@@ -12,8 +12,9 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.labo05hs.R
+import com.example.labo05hs.data.model.MovieModel
 import com.example.labo05hs.databinding.FragmentThirdBinding
-import com.example.labo05hs.ui.movie.MovieViewModel
+import com.example.labo05hs.ui.movie.viewmodel.MovieViewModel
 
 class FragmentThird : Fragment() {
 
@@ -42,15 +43,20 @@ class FragmentThird : Fragment() {
         bindEditText()
         setViewModel()
         observeStatus()
-        var name = editTextMovieName.text.toString()
-        var category = editTextCategory.text.toString()
-        var description = editTextDescription.text.toString()
-        var qualification = editTextQualification.text.toString()
 
-        //Button.setOnClickListener{
-        //    movieViewModel.addMovies(MovieModel(name,category,description,qualification))
-        //    Log.d("Lista", movieViewModel.getMovies().toString())
-        //}
+        Button.setOnClickListener{
+            val name = editTextMovieName.text.toString()
+            val category = editTextCategory.text.toString()
+            val description = editTextDescription.text.toString()
+            val qualification = editTextQualification.text.toString()
+
+            val newMovie = MovieModel(name, category, description, qualification)
+            movieViewModel.addMovies(newMovie)
+
+            Log.d("Lista", movieViewModel.getMovies().toString())
+
+            it.findNavController().navigate(R.id.action_fragment_third_to_fragment_first)
+        }
 
     }
 
